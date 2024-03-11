@@ -1,0 +1,6 @@
+@VFXFinancial_HostAddress = http://localhost:5130
+
+GET {{VFXFinancial_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
