@@ -19,6 +19,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(opitons =>
 
 // Dependency injection
 builder.Services.AddScoped<IExchangeRateRepository, ExchangeRateRepository>();
+builder.Services.AddScoped<ICurrencyPairRepository, CurrencyPairRepository>();
 
 var app = builder.Build();
 

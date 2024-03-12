@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using VFXFinancial.Data;
+using VFXFinancial.Dtos;
 using VFXFinancial.Interfaces;
 
 namespace VFXFinancial.Controllers
@@ -11,6 +12,7 @@ namespace VFXFinancial.Controllers
         private readonly ApplicationDbContext _context;
 
         private readonly IExchangeRateRepository _exchangeRateRepo;
+
         public ExchangeRateController(ApplicationDbContext dbContext, IExchangeRateRepository exchangeRateRepo)
         {
             _context = dbContext;
@@ -18,9 +20,11 @@ namespace VFXFinancial.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync()
+        public async Task<IActionResult> GetAllAsync(
+            [FromQuery] GetExchangeRateDto getExchangeRateDto,
+            CancellationToken cancellationToken)
         {
-            var exchangeRates = await _exchangeRateRepo.GetAllAsync();
+            var exchangeRates = _exchangeRateRepo.GetAllAsync();
 
             return Ok(exchangeRates);
         }
