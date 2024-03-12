@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VFXFinancial", "VFXFinancial.csproj", "{1F047E1E-4CC8-4A66-B67A-E9EAB4CB06BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VFXFinancial", "VFXFinancial.csproj", "{902102D8-9EC4-4255-AEEC-BC33FECC400B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1F047E1E-4CC8-4A66-B67A-E9EAB4CB06BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1F047E1E-4CC8-4A66-B67A-E9EAB4CB06BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1F047E1E-4CC8-4A66-B67A-E9EAB4CB06BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1F047E1E-4CC8-4A66-B67A-E9EAB4CB06BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{902102D8-9EC4-4255-AEEC-BC33FECC400B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{902102D8-9EC4-4255-AEEC-BC33FECC400B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{902102D8-9EC4-4255-AEEC-BC33FECC400B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{902102D8-9EC4-4255-AEEC-BC33FECC400B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5F999D42-B961-4D79-8EA2-4BC80F942E1B}
+		SolutionGuid = {CFCC2F83-F842-45CD-A1C4-F77D6DE1A3C8}
 	EndGlobalSection
 EndGlobal
