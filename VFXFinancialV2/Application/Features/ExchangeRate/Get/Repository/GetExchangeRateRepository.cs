@@ -1,4 +1,5 @@
-﻿using VFXFinancialV2.Application.Infrastructure.Persistence;
+﻿using Microsoft.EntityFrameworkCore;
+using VFXFinancialV2.Application.Infrastructure.Persistence;
 using DomainModel = VFXFinancialV2.Application.DomainModels;
 
 namespace VFXFinancialV2.Application.Features.ExchangeRate.Get.Repository
@@ -7,9 +8,9 @@ namespace VFXFinancialV2.Application.Features.ExchangeRate.Get.Repository
     {
         private readonly ApplicationDbContext _context = context;
 
-        public DomainModel.ExchangeRate GetExchangeRate(string fromCurrencyCode, string toCurrencyCode)
+        public Task<DomainModel.ExchangeRate?> GetExchangeRateAsync(string fromCurrencyCode, string toCurrencyCode)
         {
-            return _context.ExchangeRates.FirstOrDefault(er => er.FromCurrencyCode == fromCurrencyCode && er.ToCurrencyCode == toCurrencyCode);
+            return _context.ExchangeRates.FirstOrDefaultAsync(er => er.FromCurrencyCode == fromCurrencyCode && er.ToCurrencyCode == toCurrencyCode);
 
         }
     }

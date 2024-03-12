@@ -4,6 +4,6 @@ namespace VFXFinancialV2.Application.Features.ExchangeRate.Get.Repository
 {
     public interface IGetExchangeRateRepository
     {
-        DomainModel.ExchangeRate GetExchangeRate(string fromCurrencyCode, string toCurrencyCode);
+        Task<DomainModel.ExchangeRate?> GetExchangeRateAsync(string fromCurrencyCode, string toCurrencyCode);
     }
 }

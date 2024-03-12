@@ -19,7 +19,7 @@ namespace VFXFinancialV2.Application.Features.ExchangeRate.Get
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var exchangeRate = _exchangeRateRepo.GetExchangeRate(getExchangeRateDto.FromCurrencyCode, getExchangeRateDto.ToCurrencyCode);
+            var exchangeRate = await _exchangeRateRepo.GetExchangeRateAsync(getExchangeRateDto.FromCurrencyCode, getExchangeRateDto.ToCurrencyCode);
 
             if (exchangeRate == null)
             {

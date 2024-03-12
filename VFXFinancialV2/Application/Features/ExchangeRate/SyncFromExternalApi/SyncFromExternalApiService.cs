@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using VFXFinancialV2.Application.Features.ExchangeRate.SyncFromExternalApi.Mappers;
 using VFXFinancialV2.Application.Features.ExchangeRate.SyncFromExternalApi.Repository;
@@ -21,9 +22,20 @@ namespace VFXFinancialV2.Application.Features.ExchangeRate.SyncFromExternalApi
             try
             {
                 using var client = new HttpClient();
-                string jsonString = await client.GetStringAsync(QUERY_URL);
+                var jsonString = await client.GetStringAsync(QUERY_URL);
+
+                if (jsonString.IsNullOrEmpty())
+                {
+                    return null;
+                }
 
                 var jObject = JObject.Parse(jsonString);
+
+                if (jObject == null)
+                {
+                    return null;
+                }
+
                 var map = jObject["Realtime Currency Exchange Rate"];
 
                 var newExchangeRate = map?.ToDomainModel();
